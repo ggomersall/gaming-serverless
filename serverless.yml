@@ -11,7 +11,7 @@ provider:
 
 functions:
   streamingAPI:
-    handler: Controller/products.handler
+    handler: Controller/streaming.handler
     events:
       - http:
           path: /

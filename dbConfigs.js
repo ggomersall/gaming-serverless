@@ -16,3 +16,5 @@ const connectToDatabase = async () => {
   isConnected = database.connections[0].readyState;
   // return isConnected;
 };
+
+module.exports = connectToDatabase;
