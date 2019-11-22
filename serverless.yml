@@ -26,6 +26,6 @@ functions:
           path: /streaming/{streamingId}
           method: get
 
-Plugins:
+plugins:
   - serverless-offline
   - serverless-dotenv-plugin
