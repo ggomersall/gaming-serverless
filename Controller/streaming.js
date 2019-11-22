@@ -24,6 +24,7 @@ app.post('/streaming', async (req, res) => {
       isStreamingEnabled,
       streamingServiceType,
       streamingServiceId,
+      streamingId,
       userId
     } = data;
     if (!data) {
@@ -32,12 +33,38 @@ app.post('/streaming', async (req, res) => {
     const dataToSave = {
       isStreamingEnabled,
       streamingServiceType,
-      streamingServiceId: uuid(),
+      streamingServiceId,
+      streamingId: uuid(),
       userId: uuid()
     };
     let createStream = await StreamingService.createStream(dataToSave);
     if (createStream) res.status(200).send(createStream);
   } catch (err) {
-    console.log(err, 'error');
+    console.log(err, 'Error creating the gaming stream');
   }
 });
+
+// get all JG gaming streams
+app.get('/streaming', async (req, res) => {
+  try {
+    await dbConnection();
+    const allStreams = await StreamingService.getAllStreams();
+    if (allStreams) return res.status(200).send({ data: allStreams });
+  } catch (err) {
+    console.log(err, 'Error getting gaming streams');
+  }
+});
+
+// get One JG gaming stream
+app.get('/streaming/:streamingId', async (req, res) => {
+  try {
+    await dbConnection();
+    const { streamingId } = req.params;
+    const getStream = await StreamingService.getStreamById({ streamingId });
+    if (getStream) return res.status(200).send({ data: getStream });
+  } catch (err) {
+    console.log(err, 'Error getting the ');
+  }
+});
+
+module.exports.handler = serverless(app);

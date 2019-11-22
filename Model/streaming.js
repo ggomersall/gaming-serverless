@@ -4,6 +4,7 @@ const StreamingSchema = new mongoose.Schema(
     isStreamingEnabled: { type: Boolean },
     streamingServiceType: { type: String },
     streamingServiceId: { type: String },
+    streamingId: { type: String },
     userId: { type: String }
   },
   { timestamps: true }
