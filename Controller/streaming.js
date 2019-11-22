@@ -23,10 +23,9 @@ app.post('/streaming', async (req, res) => {
     const {
       isStreamingEnabled,
       streamingServiceType,
-      streamingServiceId,
-      streamingId,
-      userId
+      streamingServiceId
     } = data;
+
     if (!data) {
       return 'Please pass all required fields!';
     }
@@ -38,7 +37,9 @@ app.post('/streaming', async (req, res) => {
       userId: uuid()
     };
     let createStream = await StreamingService.createStream(dataToSave);
-    if (createStream) res.status(200).send(createStream);
+    if (createStream) {
+      res.status(200).send(createStream);
+    }
   } catch (err) {
     console.log(err, 'Error creating the gaming stream');
   }
