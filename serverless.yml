@@ -10,7 +10,7 @@ provider:
   region: eu-west-2
 
 functions:
-  hello:
+  streamingAPI:
     handler: Controller/products.handler
     events:
       - http:
