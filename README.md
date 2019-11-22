@@ -40,10 +40,10 @@ http://localhost:3000/
 
 `Requestbody`
 
-```
+```JSON
 {
-	isStreamingEnabled: true,
-	streamingServiceType: "twitch",
-	streamingServiceId: "valkia",
+	"isStreamingEnabled": true,
+	"streamingServiceType": "twitch",
+	"streamingServiceId": "valkia",
 }
 ```
