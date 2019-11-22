@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "1101ac6b-d160-4513-aadd-c994edf2f9e4",
+		"name": "JG-Gaming-Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a gaming stream",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\tisStreamingEnabled: true,\n\tstreamingServiceType: \"twitch\",\n\tstreamingServiceId: \"valkia\",\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/streaming",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"streaming"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get an individual gaming stream by streamId",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/streaming/4b066637-3e38-4c75-96a4-c3e4d60bc385",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"streaming",
+						"4b066637-3e38-4c75-96a4-c3e4d60bc385"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Gaming Streams",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/streaming/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"streaming",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
