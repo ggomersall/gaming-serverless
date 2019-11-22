@@ -18,12 +18,17 @@ yarn start
 
 Then go to the base url here:===> `http://localhost:3000`
 
-Path:
+Paths:
 
 / - base path
+
 /streaming - To create a new stream
+
 /streaming - To get all the streams from the db
+
 /streaming/{streamingId} - To get a stream by Id from the db
+
+---
 
 ### Project requirements
 
