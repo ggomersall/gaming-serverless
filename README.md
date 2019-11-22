@@ -2,9 +2,43 @@
 
 building a basic serverless app for saving streaming profiles for gaming.
 
-### ideas for data we want to capture
+### To start project
 
-- isStreamingEnabled -- Boolean - i.e. if the service is enabled for the userProfile
-- streamingServiceType -- String - i.e. Youtube, Twitch
-- streamingServiceId -- String - i.e. the ID of the twitch stream
-- userId -- String - i.e. the usersProfile ID, if it's an integrated service
+To install dependancies run:
+
+```bash
+yarn
+```
+
+To start the API run:
+
+```bash
+yarn start
+```
+
+Then go to the base url here:===> `http://localhost:3000`
+
+Path:
+
+/ - base path
+/streaming - To create a new stream
+/streaming - To get all the streams from the db
+/streaming/{streamingId} - To get a stream by Id from the db
+
+### Project requirements
+
+- have mongodb install and the service running
+
+### Payload to create a new stream
+
+http://localhost:3000/
+
+`Requestbody`
+
+```
+{
+	isStreamingEnabled: true,
+	streamingServiceType: "twitch",
+	streamingServiceId: "valkia",
+}
+```
